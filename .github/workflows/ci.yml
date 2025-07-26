@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 env:
-  DOJO_VERSION: v1.6.1
+  DOJO_VERSION: 1.6.1
   SCARB_VERSION: 2.10.1
   WORKING_DIRECTORY: ./backend/dojo_examples/combat_game
 
