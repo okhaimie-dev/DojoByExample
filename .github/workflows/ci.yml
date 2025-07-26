@@ -40,6 +40,15 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
         run: sozo test
 
-      - name: Check formatting
+  check:
+    runs-on: ubuntu-latest
+    name: Check format
+    steps:
+      - uses: actions/checkout@v4
+      - uses: software-mansion/setup-scarb@v1
+        with:
+          scarb-version: ${{ env.SCARB_VERSION }}
+      - name: Format
         working-directory: ${{ env.WORKING_DIRECTORY }}
-        run: scarb fmt
+        run: scarb fmt --check
+        shell: bash
